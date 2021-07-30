@@ -22,7 +22,10 @@ then
 elif (($x % 5 == 0 ))
 then 
     echo "buzz"
-else 
+elif (($x % 3 == 0 ))
+then 
+    echo "fizz"
+else
     echo 
 fi
 
@@ -30,16 +33,20 @@ declare -i b=1
 while [ $b -le 20 ]
 do 
     if (($b % 3 == 0 )) && (($b % 5 == 0 ))
-then 
-    echo $b "fizzbuzz"
-    b=$((b+1))
-elif (($b % 5 == 0 ))
-then 
-    echo $b "buzz"
-    b=$((b+1))
-else 
-    echo 
-    b=$((b+1))
-fi
+    then 
+        echo $b "fizzbuzz"
+        b=$((b+1))
+    elif (($b % 5 == 0 ))
+    then 
+        echo $b "buzz"
+        b=$((b+1))
+    elif (($b % 3 == 0 ))
+    then 
+        echo $b "fizz"
+        b=$((b+1))
+    else 
+        echo 
+        b=$((b+1))
+    fi
 done
 
